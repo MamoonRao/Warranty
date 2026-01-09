@@ -32,6 +32,23 @@ src-tauri/WixTools/
 
 # Logs
 logs/
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+
+# IDEs
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Logs
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -206,3 +223,69 @@ prisma/migrations/**/migration_lock.toml
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# Environment / secrets
+.env
+.env.*
+
+# Common build outputs (language-agnostic)
+dist/
+build/
+out/
+coverage/
+
+# Node
+node_modules/
+
+# .NET
+bin/
+obj/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Rust
+/target/
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+temp/
+tmp/
+
+# Build artifacts (for future implementation)
+node_modules/
+dist/
+build/
+*.exe
+*.dll
+
+# Database files (for future implementation)
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files (for future implementation)
+*.bak
+backups/
+
+# Environment files (for future implementation)
+.env
+.env.local
+*.key
+
