@@ -45,3 +45,43 @@ venv/
 
 # Rust
 /target/
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+temp/
+tmp/
+
+# Build artifacts (for future implementation)
+node_modules/
+dist/
+build/
+*.exe
+*.dll
+
+# Database files (for future implementation)
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files (for future implementation)
+*.bak
+backups/
+
+# Environment files (for future implementation)
+.env
+.env.local
+*.key
+
