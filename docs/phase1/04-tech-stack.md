@@ -104,6 +104,7 @@ node --version  # v18.17.0 LTS or higher
 npm --version   # v9.0+
 npx tauri --version  # Latest
 rustc --version # Latest
+```
 
 ---
 
@@ -130,7 +131,7 @@ NestJS Configuration
 **Version:** 10.x or higher
 
 **Project Structure:**
-
+```
 backend/
 ├── src/
 │   ├── business-setup/     # Module 1
@@ -150,6 +151,7 @@ backend/
 │   └── main.ts             # Entry point
 ├── package.json
 └── tsconfig.json
+```
 
 **Core Configuration:**
 - Dependency Injection via NestJS (decorators)
@@ -216,11 +218,13 @@ backend/
 %APPDATA%\FlexPOS\data\flexpos.db
 
 **Backup Location:**
+```
 %APPDATA%\FlexPOS\backups\
 ├── daily/           # Daily backups (7 kept)
 ├── weekly/          # Weekly backups (4 kept)
 ├── manual/          # User-initiated backups
 └── cloud/           # Google Drive synced backups
+```
 
 ### SQLCipher Encryption
 
@@ -315,6 +319,7 @@ export class DatabaseModule {}
 - Automatic rollback on error
 
 **Example Critical Operations:**
+```
 Sales Transaction = atomic
 ├── Create Sale record
 ├── Update Inventory
@@ -322,6 +327,7 @@ Sales Transaction = atomic
 ├── Print Receipt
 └── Trigger Backup
 (If any step fails, entire transaction rolls back)
+```
 
 ### Database Size & Performance
 
@@ -396,13 +402,14 @@ Sales Transaction = atomic
 6. Sync status shown to user
 
 **File Structure on Google Drive:**
-
+```
 My Drive/
 └── FlexPOS Backups/
     ├── Business Name/
     │   ├── daily/
     │   ├── weekly/
     │   └── manual/
+```
 
 **Permissions Required:**
 - https://www.googleapis.com/auth/drive.file (create, update, delete only)
@@ -453,11 +460,13 @@ GOOGLE_OAUTH_CLIENT_SECRET=xxx
 - Device detection via USB VID:PID matching
 
 **Integration Code Location:**
+```
 backend/src/hardware/printer/
 ├── printer.service.ts      # Main printer service
 ├── espos.driver.ts         # ESC/POS protocol handler
 ├── device.detector.ts      # USB printer detection
 └── receipt.formatter.ts    # Receipt template formatting
+```
 
 **Fallback Mechanism:**
 - If printer unavailable: Show receipt on screen (PDF option)
@@ -516,13 +525,15 @@ backend/src/hardware/printer/
 6. Manual override option available (supervisor PIN required)
 
 **Device Integration:**
+```
 backend/src/hardware/biometric/
 ├── biometric.service.ts    # Main biometric service
 ├── device.driver.ts        # USB/COM communication
 ├── template.manager.ts     # Fingerprint template storage
 └── attendance.recorder.ts  # Attendance logging
+```
 
-Fallback Handling:
+**Fallback Handling:**
 - Manual attendance entry with reason
 - PIN/password alternative
 - Supervisor approval required for manual entry
@@ -540,7 +551,7 @@ Fallback Handling:
 - Stable internet connection (for npm packages)
 
 **Core Tools:**
-```bash
+```
 # Node.js & npm
 node --version    # v18.17.0 or higher
 npm --version     # v9.0 or higher
@@ -731,7 +742,7 @@ signtool sign /f cert.pfx /p password /t http://timestamp.server app.exe
 - Full workflow testing (sale from start to finish)
 
 **Test Structure:**
-
+```
 tests/
 ├── unit/
 │   ├── inventory.service.test.ts
@@ -745,6 +756,7 @@ tests/
     ├── pos-complete-sale.test.ts
     ├── offline-sync.test.ts
     └── ...
+```
 
 ### Performance Testing Targets
 
@@ -820,7 +832,7 @@ tests/
 ### End-User System Requirements
 
 **Minimum Specification:**
-
+```
 OS:        Windows 10 (Build 2004) or Windows 11
 Processor: Intel Core 2 Duo / AMD equivalent (2GHz+)
 RAM:       4GB
@@ -829,9 +841,10 @@ Display:   1024x768 resolution
 Keyboard:  Standard USB or wireless
 Mouse:     Optional (touchscreen alternative)
 Internet:  Optional (for sync/backups only)
+```
 
 **Recommended Specification:**
-
+```
 OS:        Windows 11
 Processor: Intel Core i5 / AMD Ryzen 5 (3GHz+)
 RAM:       8GB
@@ -839,6 +852,7 @@ Storage:   20GB free SSD space
 Display:   1366x768 or higher
 Keyboard:  Mechanical USB keyboard
 Network:   Gigabit Ethernet or WiFi 5+
+```
 
 ### Hardware Compatibility Matrix
 
@@ -1028,12 +1042,14 @@ export class AddProductCategory implements MigrationInterface {
 ### Logging Strategy
 
 **Log Locations:**
+```
 %APPDATA%\FlexPOS\logs\
 ├── app-{YYYY-MM-DD}.log          # General application logs
 ├── database-{YYYY-MM-DD}.log     # Database operations
 ├── errors-{YYYY-MM-DD}.log       # Error and exceptions
 ├── audit-{YYYY-MM-DD}.log        # Compliance and audit trail
 └── sync-{YYYY-MM-DD}.log         # Offline sync operations
+```
 
 **Log Retention:**
 - Daily rotation (new file per day)
@@ -1232,6 +1248,7 @@ CREATE INDEX idx_payroll_employee ON payroll(employee_id, month);
 ###  18-Month Retention Policy
 
 **Backup Retention:**
+```
 Local Backups:
 ├── Last 7 daily backups (kept)
 ├── Last 4 weekly backups (kept)
@@ -1241,7 +1258,7 @@ Google Drive Backups:
 └── All uploaded (user's responsibility to manage)
 
 Total Local Storage: ~2-5GB for full year
-
+```
 ---
 
 ## 18. COMPLIANCE & STANDARDS
